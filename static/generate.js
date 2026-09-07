@@ -144,7 +144,7 @@ if (typeof document !== "undefined") {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = "ssl-subscriptions.ics";
+      a.download = "ssl-calendar.ics";
       document.body.appendChild(a);
       a.click();
       a.remove();

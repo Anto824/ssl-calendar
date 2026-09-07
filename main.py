@@ -31,7 +31,7 @@ def subscribe(request: Request, series: list[str] = Form(default=[])):
     each checked box contributes one "series=<id>" value.
     """
     ics = build_ics(series)
-    filename = "ssl-subscriptions.ics"
+    filename = "ssl-calendar.ics"
     return Response(
         content=ics,
         media_type="text/calendar; charset=utf-8",
