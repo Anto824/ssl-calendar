@@ -8,10 +8,10 @@ window.SERIES = [
     "start": "2026-08-02T18:00:00",
     "duration": 60,
     "dates": [
-      "2026-08-02T18:00:00",
-      "2026-08-16T18:00:00",
-      "2026-08-30T18:00:00",
-      "2026-09-20T18:00:00"
+      "2026-08-02T20:30:00",
+      "2026-08-16T20:30:00",
+      "2026-08-30T20:30:00",
+      "2026-09-20T20:30:00"
     ]
   },
   {
@@ -19,7 +19,7 @@ window.SERIES = [
     "name": "Slipstream Simracing League - Season 6",
     "description": "10-week series alternating between Sprint and Endurance events.",
     "location": "Global Circuits",
-    "start": "2026-08-06T18:00:00",
+    "start": "2026-08-06T21:00:00",
     "duration": 90,
     "rrule": "FREQ=WEEKLY;BYDAY=TH",
     "count": 10
@@ -32,10 +32,10 @@ window.SERIES = [
     "start": "2026-06-23T18:00:00",
     "duration": 180,
     "dates": [
-      "2026-06-23T18:00:00",
-      "2026-07-28T18:00:00",
-      "2026-09-01T18:00:00",
-      "2026-09-29T18:00:00"
+      "2026-06-23T20:00:00",
+      "2026-07-28T20:00:00",
+      "2026-09-01T20:00:00",
+      "2026-09-29T20:00:00"
     ]
   }
 ];
