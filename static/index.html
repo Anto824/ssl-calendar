@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscribe to Event Series</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #101418;
+      color: #e6e9ed;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    main { max-width: 560px; width: 100%; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    p.sub { color: #9aa4af; margin-top: 0; margin-bottom: 1.5rem; }
+    fieldset {
+      border: 1px solid #2a3138;
+      border-radius: 10px;
+      margin: 0;
+      padding: 0.5rem 1rem;
+    }
+    label.series {
+      display: block;
+      padding: 0.75rem 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    label.series:hover { background: #1a2027; }
+    label.series input { margin-right: 0.6rem; transform: translateY(1px); }
+    .name { font-weight: 600; }
+    .desc { color: #9aa4af; font-size: 0.85rem; margin: 0.15rem 0 0; }
+    .loc { color: #7f8a95; font-size: 0.8rem; margin: 0.1rem 0 0; }
+    button {
+      margin-top: 1.25rem;
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: #2f81f7;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover { background: #3d8df9; }
+    #form-msg { color: #e5534b; margin-top: 0.75rem; text-align: center; display: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Subscribe to Event Series</h1>
+    <p class="sub">Check the series you want to follow, then download a calendar
+      file and import it into your calendar app.</p>
+
+    <form id="subscribe-form">
+      <fieldset id="series-list"></fieldset>
+      <button type="submit">Download .ics file</button>
+      <div id="form-msg"></div>
+    </form>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="generate.js"></script>
+  <script>
+    // Render one checkbox per series from data.js
+    (function () {
+      const list = document.getElementById("series-list");
+      const frag = document.createDocumentFragment();
+      for (const s of window.SERIES) {
+        const label = document.createElement("label");
+        label.className = "series";
+
+        const input = document.createElement("input");
+        input.type = "checkbox";
+        input.name = "series";
+        input.value = s.id;
+
+        const name = document.createElement("span");
+        name.className = "name";
+        name.textContent = s.name;
+        label.appendChild(input);
+        label.appendChild(name);
+
+        if (s.description) {
+          const desc = document.createElement("div");
+          desc.className = "desc";
+          desc.textContent = s.description;
+          label.appendChild(desc);
+        }
+        if (s.location) {
+          const loc = document.createElement("div");
+          loc.className = "loc";
+          loc.textContent = "\u{1F4CD} " + s.location;
+          label.appendChild(loc);
+        }
+        frag.appendChild(label);
+      }
+      list.appendChild(frag);
+    })();
+  </script>
+</body>
+</html>

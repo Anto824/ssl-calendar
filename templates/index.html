@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscribe to Event Series</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #101418;
+      color: #e6e9ed;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    main { max-width: 560px; width: 100%; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    p.sub { color: #9aa4af; margin-top: 0; margin-bottom: 1.5rem; }
+    fieldset {
+      border: 1px solid #2a3138;
+      border-radius: 10px;
+      margin: 0;
+      padding: 0.5rem 1rem;
+    }
+    label.series {
+      display: block;
+      padding: 0.75rem 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    label.series:hover { background: #1a2027; }
+    label.series input { margin-right: 0.6rem; transform: translateY(1px); }
+    .name { font-weight: 600; }
+    .desc { color: #9aa4af; font-size: 0.85rem; margin: 0.15rem 0 0; }
+    .loc { color: #7f8a95; font-size: 0.8rem; margin: 0.1rem 0 0; }
+    button {
+      margin-top: 1.25rem;
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: #2f81f7;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover { background: #3d8df9; }
+    .none { color: #e5534b; margin-top: 0.75rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Subscribe to Event Series</h1>
+    <p class="sub">Check the series you want to follow, then download a calendar
+      file and import it into your calendar app.</p>
+
+    <form method="post" action="/subscribe">
+      <fieldset>
+        {% for s in series %}
+        <label class="series">
+          <input type="checkbox" name="series" value="{{ s.id }}">
+          <span class="name">{{ s.name }}</span>
+          {% if s.description %}<div class="desc">{{ s.description }}</div>{% endif %}
+          {% if s.location %}<div class="loc">&#128205; {{ s.location }}</div>{% endif %}
+        </label>
+        {% endfor %}
+      </fieldset>
+      <button type="submit">Download .ics file</button>
+    </form>
+  </main>
+</body>
+</html>
