@@ -16,20 +16,6 @@ A series must define exactly one of "rrule" or "dates".
 
 SERIES = [
     {
-        "id": "ssl-mx5-cup-2026",
-        "name": "SSL MX-5 Cup 2026",
-        "description": "MX-5 NR-A ND 2022 championship featuring Sprint and Reverse Grid races.",
-        "location": "Multiple Venues (Daytona, Tsukuba, Nurburgring, Road Atlanta)",
-        "start": "2026-08-02T18:00:00",
-        "duration": 60,
-        "dates": [
-            "2026-08-02T20:30:00",
-            "2026-08-16T20:30:00",
-            "2026-08-30T20:30:00",
-            "2026-09-20T20:30:00",
-        ],
-    },
-    {
         "id": "ssl-season-7",
         "name": "Slipstream Simracing League - Season 7",
         "description": "10-week series alternating between Sprint and Endurance events.",
