@@ -30,8 +30,8 @@ SERIES = [
         ],
     },
     {
-        "id": "ssl-season-6",
-        "name": "Slipstream Simracing League - Season 6",
+        "id": "ssl-season-7",
+        "name": "Slipstream Simracing League - Season 7",
         "description": "10-week series alternating between Sprint and Endurance events.",
         "location": "Global Circuits",
         "start": "2026-08-06T21:00:00",
@@ -40,19 +40,21 @@ SERIES = [
         "count": 10,
     },
     {
-        "id": "ssl-wec-series",
-        "name": "SSL WEC Series",
-        "description": "Official WEC Season featuring 2 and 3-hour endurance races.",
-        "location": "Le Mans, Spa-Francorchamps, Fuji, Nürburgring",
-        "start": "2026-06-23T18:00:00",
-        "duration": 180,
-        "dates": [
-            "2026-06-23T20:00:00",
-            "2026-07-28T20:00:00",
-            "2026-09-01T20:00:00",
-            "2026-09-29T20:00:00",
-        ],
-    },
+    "id": "ssl-side-series-2026-2027",
+    "name": "SSL Side Series",
+    "description": "Side Series featuring Multiclass and Endurance races across various car classes.",
+    "location": "Multiple Venues (Watkins Glen, Tokyo Expressway, Fuji Speedway, Brands Hatch, Spa-Francorchamps, Daytona Road Course)",
+    "start": "2026-11-10T20:30:00",
+    "duration": 60,
+    "dates": [
+        "2026-11-10T20:30:00",
+        "2026-11-29T20:30:00",
+        "2026-12-08T20:30:00",
+        "2026-12-22T20:30:00",
+        "2027-01-05T20:30:00",
+        "2027-01-19T20:30:00"
+    ]
+},
 ]
 
 def get_series(series_id: str) -> dict | None:
